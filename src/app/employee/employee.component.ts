@@ -69,6 +69,41 @@ export class EmployeeComponent implements OnInit {
     }
   }
 
+  onSearch(){
+    const isData = localStorage.getItem("EmpData");
+    if(isData != null){
+      const localData = JSON.parse(isData);
+      if(this.sortBy=="Name"){
+        const filterData = localData.filter((m:EmployeeObj) => m.FirstName.toLocaleLowerCase().startsWith(this.searchText.toString()))
+        this.employeeArr = filterData;
+      }
+
+      if(this.sortBy=="Technology"){
+        const filterData = localData.filter((m:EmployeeObj) => m.Technology.toLocaleLowerCase().startsWith(this.searchText.toString()) )
+        this.employeeArr = filterData;
+      }
+
+      if(this.sortBy=="Designation"){
+        const filterData = localData.filter((m:EmployeeObj) => m.Designation.toLocaleLowerCase().startsWith(this.searchText.toString()))
+        this.employeeArr = filterData;
+      }
+
+      if(this.sortBy=="skill"){
+        const filterData = localData.filter((m:EmployeeObj) => m.skill.toLocaleLowerCase().startsWith(this.searchText.toString()))
+        this.employeeArr = filterData;
+      }
+
+      if(this.sortBy=="Core"){
+        const filterData = localData.filter((m:EmployeeObj) => m.Core.toLocaleLowerCase().startsWith(this.searchText.toString()))
+        this.employeeArr = filterData;
+      }
+
+      if(this.sortBy=="Company"){
+        const filterData = localData.filter((m:EmployeeObj) => m.Company.toLocaleLowerCase().startsWith(this.searchText.toString()))
+        this.employeeArr = filterData;
+      }
+    }
+  }
 }
 
 export class EmployeeObj{

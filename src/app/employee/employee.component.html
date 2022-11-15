@@ -89,7 +89,7 @@
                     
                     </div>
                     <div class="col-md-8">
-                        <input type="text" name="Certification"  [(ngModel)] = "employeeObj.Certification" class="form-control"/>
+                        <input type="text" name="Certification" [disabled]="employeeObj.IsCertification == 'No' || employeeObj.IsCertification == ''" [(ngModel)] = "employeeObj.Certification" class="form-control"/>
                     </div>
                 </div>
 
@@ -143,7 +143,7 @@
                     </select>
                 </div>
                 <div class="col-md-3">
-                    <input type="text"  [(ngModel)] = "searchText" class="form-control"/>
+                    <input type="text"  [(ngModel)] = "searchText" (ngModelChange)="onSearch()" class="form-control"/>
                 </div>
             </div>
             <div class="row">
