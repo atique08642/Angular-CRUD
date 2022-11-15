@@ -25,3 +25,4 @@
 - npm install
 - Type 'ng serve' in the terminal. To serve the project
 - Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- To check the working of the project [Click here](https://glistening-tartufo-09cd2d.netlify.app/)
